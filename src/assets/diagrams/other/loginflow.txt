@@ -1,0 +1,41 @@
+Ref: https://sequencediagram.org/
+
+title Login Flow Success
+
+participant App
+App->Login:submit(userId, password)
+Login-->AuthN: authenticate(userId, password)
+AuthN-->AuthN: successful
+Login<-AuthN: user, token
+Login-->Login: save user in store
+Login->App: token
+App->App: save token in app state
+Home <- App: redirect
+
+
+title Login Flow Failure
+
+participant App
+App->Login:submit(userId, password)
+Login-->AuthN: authenticate(userId, password)
+AuthN-->AuthN: failure
+Login<-AuthN: error
+Login->App: error
+
+title Login Flow Create OK
+
+participant App
+App->Login:
+Login->Login: userExists(userId) = no
+Login-->Store: create(userId, password, userName)
+Store-->Store: ok
+Store-->Login: ok
+Login->App:
+
+title Login Flow Create Fail
+
+participant App
+App->Login:
+Login->Login: userExists(userId) = yes
+Login->App: error
+

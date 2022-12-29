@@ -1,0 +1,14 @@
+.nav-divider ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-divider li {
+    padding-left: 50px;
+}
+
+.nav-divider li:last-of-type {
+    margin-left: auto;
+    color: --var(mwangiColor1Background);
+}

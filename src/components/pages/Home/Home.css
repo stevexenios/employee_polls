@@ -1,0 +1,19 @@
+.button-group {
+    margin: auto 30%;
+
+    
+}
+
+.button-group .ant-btn {
+    color: var(--mwangiColor3Text);
+    border-color: var(--mwangiColor3Text);
+}
+
+.button-group .ant-btn:active:hover:not([disabled]) {
+    background-color: var(--mwangiColor1Background);
+}
+
+.button-group .ant-btn:disabled {
+    color: var(--mwangiColor5Background);
+    border-color: var(--mwangiColor5Background);
+}

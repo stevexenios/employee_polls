@@ -1,0 +1,28 @@
+.poll-container {
+    width: auto;
+    min-width: 1040px;
+    height: 400px;
+    border: 2px solid var(--mwangiColor1Text);
+    border-radius: 10px;
+    background-color: var(--mwangiColor2Background);
+    padding: 5px 10px;
+    margin: 80px 100px;
+}
+
+h3 {
+    position: relative;
+    left: 20px;
+    display: inline-block;
+}
+
+.poll-inner-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.div-inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,110 @@
+.employee-polls-h1 {
+    position: absolute;
+    top: 300px;
+    bottom: 0px;
+    left: 60px;
+    right: auto;
+}
+
+.employee-polls-h2 {
+    margin: 5px 15px 5px 20px;
+}
+
+.polls-text {
+    font-family: var(--mwangiFont1);
+    color: var(--mwangiColor2Text);
+    font-weight: bold;
+    font-size: 22px;
+    position: absolute;
+    top: 120px;
+    left: 20px;
+}
+
+.login-form-wrap {
+    background-color: var(--mwangiColor2Background);
+    box-shadow: 12px 12px 2px 1px rgba(136, 136, 224, 0.4);
+    border: solid var(--mwangiColor1Text);
+    border-radius: 12px;
+    position: absolute;
+    top: 200px;
+    bottom: auto;
+    right: 280px;
+    left: auto;
+    height: 360px;
+    width: 360px;
+}
+
+.error-message {
+    margin: 5px;
+}
+
+.login-input-checkbox {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--mwangiColor1Text);
+    padding-left: 150px;
+}
+
+.login-input{
+    width: 80%;
+    height: 30px;
+    border-radius: 3px;
+    border-color: var(--mwangiColor1Text);
+    margin: 2px 10px 1px;
+    font-size: 16px;
+    background-color: aliceblue;
+}
+
+.login-input:focus {
+    outline: none !important;
+    border-color: rgb(177, 88, 204);
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.submit-button {
+    background-color: var(--mwangiColor1Text);
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 20px 20px 20px;
+    height: 40px;
+    width: 120px;
+    border-radius: 3px;
+    border-color: var(--mwangiColor1Text);
+}
+
+.submit-button:hover {
+    background-color: blueviolet;
+}
+
+.submit-button:focus {
+    background-color: rgb(59, 2, 77);
+}
+
+.submit-button:disabled {
+    background-color: var(--mwangiColor2Background);
+}
+
+.create-user-button {
+    background-color: aliceblue;
+    color: var(--mwangiColor1Text);
+    font-weight: bold;
+    font-size: 14px;
+    margin: 20px 20px 20px;
+    height: 40px;
+    width: 120px;
+    border-radius: 3px;
+    border-color: var(--mwangiColor1Text);
+}
+
+.create-user-button:hover {
+    background-color: var(--mwangiColor2Background);
+}
+
+.error {
+    color: red;
+    font-style: italic;
+    margin: -15px 8px;
+    padding: 2px 2px;
+    font-size: 12px;
+}

@@ -1,0 +1,5 @@
+.logout-button {
+    display: block;
+    color: var(--mwangiColor3Text);
+    font-family: var(--mwangiFont1);
+}

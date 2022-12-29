@@ -1,0 +1,36 @@
+:root {
+  /* Font */
+  --mwangiFont1:'Segoe UI';
+  --mwangiFontWeight1: 4em;
+  --mwangiFontWeight2: 2em;
+
+  /* Colors */
+  --mwangiColor1Text: #7000ff;
+  --mwangiColor2Text: #575353;
+  --mwangiColor3Text: #4c0ca0;
+  --mwangiColor0Background: #f3edf5;
+  --mwangiColor1Background: #e1d6e7;
+  --mwangiColor2Background: #ddcfe6;
+  --mwangiColor3Background: #d6f5f5;
+  --mwangiColor4Background: #9966ff;
+  --mwangiColor5Background: #c197db;
+  --mwangiUnansweredBackground: #ffcccb;
+  --mwangiAnsweredBackground: #b1fcb1;
+}
+
+h1 {
+  color: var(--mwangiColor1Text);
+  font-size: var(--mwangiFontWeight1);
+  font-family: var(--mwangiFont1);
+}
+
+h2 {
+  color: var(--mwangiColor1Text);
+  font-size: var(--mwangiFontWeight2);
+  font-family: var(--mwangiFont1);
+}
+
+h3 {
+  color: var(--mwangiColor3Text);
+  font-family: var(--mwangiFont1);
+}

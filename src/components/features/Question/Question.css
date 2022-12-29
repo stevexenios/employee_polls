@@ -1,0 +1,67 @@
+.question-container-unanswered {
+    background-color: var(--mwangiUnansweredBackground);
+    box-shadow: 12px 12px 2px 1px rgba(136, 136, 224, 0.4);
+    border: solid var(--mwangiColor1Text);
+    border-radius: 8px;
+    /* flex-basis: auto; */
+    width: 160px;
+    height: 120px;
+    margin: 10px;
+    display: block;
+}
+
+.question-container-answered {
+    background-color: var(--mwangiAnsweredBackground);
+    box-shadow: 12px 12px 2px 1px rgba(136, 136, 224, 0.4);
+    border: solid var(--mwangiColor1Text);
+    border-radius: 8px;
+    /* flex-basis: auto; */
+    width: 160px;
+    height: 120px;
+    margin: 10px;
+    display: block;
+}
+
+.date-display {
+    font-size: 12px;
+    font-family: var(--mwangiFont1);
+    margin: 10px 10px;
+    color: var(--mwangiColor3Text);
+}
+
+h4 {
+    font-family: var(--mwangiFont1);
+    margin: auto;
+    color: var(--mwangiColor3Text);
+}
+
+.button-display {
+    background-color: var(--mwangiColor4Background);
+    margin: 5px 30px 20px;
+}
+
+.ant-btn.button-display:hover {
+    background-color: var(--mwangiColor3Text);
+    margin: 5px 30px 20px;
+}
+
+.ant-btn.selection-option-button-answered{
+    background-color: var(--mwangiAnsweredBackground);
+}
+
+.ant-btn.selection-option-button-unanswered{
+    background-color: var(--mwangiUnansweredBackground);
+}
+
+.ant-btn.selection-option-button-unanswered:visited  {
+    background-color: var(--mwangiAnsweredBackground);
+}
+.ant-btn.selection-option-button-unanswered:hover {
+    background-color: var(--mwangiAnsweredBackground);
+}
+.ant-btn.selection-option-button-unanswered:active {
+    background-color: var(--mwangiAnsweredBackground);
+}
+.ant-btn.selection-option-button-unanswered:focus {
+    background-color: var(--mwangiAnsweredBackground);
+}
