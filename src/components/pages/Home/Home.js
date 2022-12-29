@@ -7,12 +7,6 @@ import { fetchUsers, selectUser } from '../../../redux/users';
 import { fetchQuestions } from '../../../redux/questions';
 import {Button, Space} from 'antd';
 
-// const customStyle = {
-//     color: '--var(mwangiColor4Background)',
-//     borderColor: '--var(mwangiColor3Text)',
-//     background: 'red',
-// };
-
 const Home = () => {
   const dispatch = useDispatch();
 
