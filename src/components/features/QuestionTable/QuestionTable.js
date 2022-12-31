@@ -15,14 +15,15 @@ const QuestionTable = ({ setConfirmedAnswer, question, styling }) => {
   const [confirmedText, setConfirmedText] = useState('');
 
   useEffect(() => {
+    console.log('QuestionTable - question: ', question);
+    console.log('QuestionTable - currentUser: ', currentUser);
     if (question) {
       setOptionOne(question.optionOne.text);
       setOptionTwo(question.optionTwo.text);
     }
-    if (question?.optionOne?.votes?.includes(currentUser?.id)) {
+    if (question.optionOne.votes.includes(currentUser.id)) {
       setOptionSelected('optionOne');
-    }
-    if (question?.optionTwo?.votes?.includes(currentUser?.id)) {
+    } else if (question.optionTwo.votes.includes(currentUser.id)) {
       setOptionSelected('optionTwo');
     }
   }, [question]);

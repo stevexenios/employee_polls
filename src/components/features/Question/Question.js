@@ -6,7 +6,7 @@ import {
   fetchQuestions,
 } from '../../../redux/questions';
 import { useDispatch, useSelector } from 'react-redux';
-import QuestionsModal from './QuestionModal';
+import QuestionsModal from '../QuestionSummary/QuestionSummary';
 import './Question.css';
 
 const Question = ({ questionId, styling }) => {

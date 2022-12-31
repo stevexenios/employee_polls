@@ -1,8 +1,11 @@
 import { Button, Divider, Modal } from 'antd';
 import { useState } from 'react';
-import QuestionTable from './QuestionTable';
+import { useNavigate } from 'react-router-dom';
+import QuestionTable from '../QuestionTable/QuestionTable';
 
-const QuestionModal = ({ restore, question, styling }) => {
+const QuestionSummary = ({ restore, question, styling }) => {
+  const navigate = useNavigate();
+
   const [displayModal, setDisplayModal] = useState(false);
   const [confirmedAnswer, setConfirmedAnswer] = useState({});
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -37,6 +40,10 @@ const QuestionModal = ({ restore, question, styling }) => {
     );
   };
 
+  const goToQuestion = () => {
+    navigate(`/questions/${question?.id}`);
+  };
+
   return (
     <div className={'question-container-' + styling}>
       <Divider>
@@ -49,8 +56,18 @@ const QuestionModal = ({ restore, question, styling }) => {
         className="button-display"
         onClick={() => setDisplayModal(true)}
       >
-        Show details
+        Display summary
       </Button>
+
+      <Button
+        type="primary"
+        size="small"
+        className="button-display"
+        onClick={() => goToQuestion()}
+      >
+        Go to question
+      </Button>
+
       <Modal
         title="Would You Rather...?"
         open={displayModal}
@@ -71,4 +88,4 @@ const QuestionModal = ({ restore, question, styling }) => {
   );
 };
 
-export default QuestionModal;
+export default QuestionSummary;

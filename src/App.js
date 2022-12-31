@@ -14,6 +14,7 @@ import {
   selectUserToken,
 } from './redux/user';
 import Nav from './components/features/Nav/Nav';
+import QuestionDetails from './components/pages/QuestionDetails/QuestionDetails';
 
 const App = (props) => {
   const loggedInUserId = useSelector(selectUserId);
@@ -37,6 +38,7 @@ const App = (props) => {
               <Route path="/home" exact element={<Home />} />
               <Route path="/new" exact element={<New />} />
               <Route path="/leaderboard" exact element={<Leaderboard />} />
+              <Route path="/questions/:question_id" exact element={<QuestionDetails />} />
           </Route>
 
           {/* Catch all */}

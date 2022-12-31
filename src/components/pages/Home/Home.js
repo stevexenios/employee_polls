@@ -1,10 +1,9 @@
 import './Home.css';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectQuestions } from '../../../redux/questions';
 import Questions from '../../features/Questions/Questions';
 import { fetchUsers, selectUser } from '../../../redux/users';
-import { fetchQuestions } from '../../../redux/questions';
+import { selectQuestions, fetchQuestions } from '../../../redux/questions';
 import {Button, Space} from 'antd';
 
 const Home = () => {
@@ -32,7 +31,7 @@ const Home = () => {
       const tempAnswered = Object.keys(user.answers);
       setAnswered(tempAnswered);
 
-      const allQuestions = Object.values(questions);
+      const allQuestions = Object.values(questions).sort((q1, q2) => q2.timestamp - q1.timestamp);
       let tempUnanswered = new Set();
       allQuestions.forEach((q) => {
         if (!user.answers[q.id]) {
