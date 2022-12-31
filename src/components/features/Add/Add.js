@@ -42,6 +42,7 @@ const Add = () => {
     console.log(' Add - currentUser.: ', currentUser);
     dispatch(saveNewQuestion({ optionOneText, optionTwoText, author: currentUser.id }));
     dispatch(fetchQuestions());
+    dispatch(fetchUsers());
   };
 
   const handleSubmit = (e) => {
