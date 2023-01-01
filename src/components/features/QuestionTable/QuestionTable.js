@@ -4,7 +4,7 @@ import { selectUser, selectTotalUsers } from '../../../redux/users';
 import { useSelector } from 'react-redux';
 import errorHandler from '../../../utils/errorHandler';
 
-const QuestionTable = ({ setConfirmedAnswer, question, styling }) => {
+const QuestionTable = ({ setConfirmedAnswer, question, styling, disableOnModal = false }) => {
   const currentUser = useSelector(selectUser);
   const totalEmployees = useSelector(selectTotalUsers);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -15,8 +15,6 @@ const QuestionTable = ({ setConfirmedAnswer, question, styling }) => {
   const [confirmedText, setConfirmedText] = useState('');
 
   useEffect(() => {
-    console.log('QuestionTable - question: ', question);
-    console.log('QuestionTable - currentUser: ', currentUser);
     if (question) {
       setOptionOne(question.optionOne.text);
       setOptionTwo(question.optionTwo.text);
@@ -120,7 +118,7 @@ const QuestionTable = ({ setConfirmedAnswer, question, styling }) => {
 
   const renderButtonAndText = (text) => (
     <Button
-      disabled={isAnswered}
+      disabled={isAnswered || disableOnModal}
       className={
         isAnswered
           ? determineButtonClass(text)

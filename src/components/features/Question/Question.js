@@ -6,7 +6,7 @@ import {
   fetchQuestions,
 } from '../../../redux/questions';
 import { useDispatch, useSelector } from 'react-redux';
-import QuestionsModal from '../QuestionSummary/QuestionSummary';
+import QuestionsSummary from '../QuestionSummary/QuestionSummary';
 import './Question.css';
 
 const Question = ({ questionId, styling }) => {
@@ -25,7 +25,7 @@ const Question = ({ questionId, styling }) => {
   };
 
   return (
-    <QuestionsModal
+    <QuestionsSummary
       restore={reInitializeStore}
       question={question}
       styling={styling}

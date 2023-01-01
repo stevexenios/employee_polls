@@ -43,7 +43,7 @@ h4 {
     display: block;
 }
 
-.ant-btn.button-display:hover {
+.ant-btn.button-display:hover:not([disabled]) {
     background-color: var(--mwangiColor3Text);
 }
 
@@ -58,7 +58,7 @@ h4 {
 .ant-btn.selection-option-button-unanswered:visited  {
     background-color: var(--mwangiAnsweredBackground);
 }
-.ant-btn.selection-option-button-unanswered:hover {
+.ant-btn.selection-option-button-unanswered:hover:not([disabled]) {
     background-color: var(--mwangiAnsweredBackground);
 }
 .ant-btn.selection-option-button-unanswered:active {

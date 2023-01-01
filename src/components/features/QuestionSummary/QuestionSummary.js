@@ -74,14 +74,16 @@ const QuestionSummary = ({ restore, question, styling }) => {
         okText="Confirm"
         cancelText="Close"
         width="auto"
+        footer={null}
         onCancel={handleCancel}
-        onOk={handleOk}
+        // onOk={handleOk}
         confirmLoading={confirmLoading}
       >
         <QuestionTable
           setConfirmedAnswer={setConfirmedAnswer}
           question={question}
           styling={styling}
+          disableOnModal={true}
         />
       </Modal>
     </div>
