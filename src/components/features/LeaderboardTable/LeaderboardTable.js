@@ -5,6 +5,7 @@ import { fetchQuestions } from '../../../redux/questions';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table, Tag } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+const _ = require('lodash');
 
 const { Column, ColumnGroup } = Table;
 
@@ -12,7 +13,7 @@ const LeaderboardTable = () => {
   const dispatch = useDispatch();
 
   const allUsers = useSelector(selectUsers);
-  const [actualUsers, setActualUsers] = useState();  
+  const [actualUsers, setActualUsers] = useState([]);  
 
   useEffect(() => {
     dispatch(fetchQuestions());
@@ -23,7 +24,7 @@ const LeaderboardTable = () => {
     const updatedUsers = Object.values(allUsers).map((eachUser) => {
       const [firstName, lastName] = eachUser.name.split(' ');
       return ({
-        key: eachUser.id,
+        key: eachUser.id + '_' + Date.now(),
         firstName,
         lastName,
         userId: eachUser.id,
@@ -31,7 +32,7 @@ const LeaderboardTable = () => {
         qAsked: eachUser.questions.length,
         qAnswered: Object.keys(eachUser.answers).length,
         tags: [...Object.keys(eachUser.answers)],
-        sortWeight: eachUser.questions.length + eachUser.answers.length
+        sortWeight: eachUser.questions.length + Object.keys(eachUser.answers).length
       });
     });
 
@@ -49,14 +50,9 @@ const LeaderboardTable = () => {
     const sortedUsers = mapAndSortUsers();
     setActualUsers(sortedUsers);
   }, []);
-
-  useEffect(() => {
-    const sortedUsers = mapAndSortUsers();
-    setActualUsers(sortedUsers);
-  }, [allUsers]);
   
   return (
-    <Table dataSource={actualUsers}>
+    <Table dataSource={_.cloneDeep(actualUsers)}>
       <Column title="Position" dataIndex="position" key="position" />
       <ColumnGroup title="Name">
         <Column title="First Name" dataIndex="firstName" key="firstName" />
