@@ -5,9 +5,9 @@
 - [X] The person using your application should have a way of impersonating/logging in as an existing user.
 - [X] Create your own account creation process to allow a user to sign up for an account. 
 - [X] Once the user logs in, the home page should be shown.
-- [] We always want to make sure we know who the logged in user is, so information about the logged in user should appear on the page. 
-- [] If someone tries to navigate anywhere by entering the address in the address bar, the user is asked to sign in and then the requested page is shown. 
-- [] The application allows the user to log out and log back in.
+- [X] We always want to make sure we know who the logged in user is, so information about the logged in user should appear on the page. 
+- [X] If someone tries to navigate anywhere by entering the address in the address bar, the user is asked to sign in and then the requested page is shown. 
+- [X] The application allows the user to log out and log back in.
 
 
 ## `Login` button
@@ -25,7 +25,7 @@ subgraph "Login user flow"
 end
 ```
 
-![Login flow](./diagrams/loginGeneralFlow.png)
+![Login flow](../../../assets/diagrams/loginGeneralFlow.png)
 
 ## `Create` account button
 
@@ -50,7 +50,7 @@ subgraph "User creation cancelation flow"
 end
 ```
 
-![Create flow](./diagrams/createUserFlow.png)
+![Create flow](../../../assets/diagrams/createUserFlow.png)
 
 ## References
 1. [Mermaid graph](#https://mermaid.live/)
