@@ -7,22 +7,7 @@ const QuestionSummary = ({ restore, question, styling }) => {
   const navigate = useNavigate();
 
   const [displayModal, setDisplayModal] = useState(false);
-  const [confirmedAnswer, setConfirmedAnswer] = useState({});
   const [confirmLoading, setConfirmLoading] = useState(false);
-
-  const handleOk = () => {
-    if (confirmedAnswer !== {}) {
-      setConfirmLoading(true);
-      restore(confirmedAnswer);
-      setTimeout(() => {
-        setDisplayModal(false);
-        setConfirmLoading(false);
-      }, 500);
-    } else
-      console.log(
-        'ConfirmedAnswer is still an empty object. Nothing to submit!'
-      );
-  };
 
   const handleCancel = () => {
     setDisplayModal(false);
@@ -56,7 +41,7 @@ const QuestionSummary = ({ restore, question, styling }) => {
         className="button-display"
         onClick={() => setDisplayModal(true)}
       >
-        Display summary
+        Display poll
       </Button>
 
       <Button
@@ -65,7 +50,7 @@ const QuestionSummary = ({ restore, question, styling }) => {
         className="button-display"
         onClick={() => goToQuestion()}
       >
-        Go to question
+        Question Details
       </Button>
 
       <Modal
@@ -80,10 +65,8 @@ const QuestionSummary = ({ restore, question, styling }) => {
         confirmLoading={confirmLoading}
       >
         <QuestionTable
-          setConfirmedAnswer={setConfirmedAnswer}
           question={question}
           styling={styling}
-          disableOnModal={true}
         />
       </Modal>
     </div>

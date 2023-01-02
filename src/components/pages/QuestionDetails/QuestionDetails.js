@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import QuestionTable from '../../features/QuestionTable/QuestionTable';
-import { selectQuestions, fetchQuestions, saveAnsweredQuestion } from '../../../redux/questions';
-import { selectUser, fetchUsers } from '../../../redux/users';
+import { selectQuestions } from '../../../redux/questions';
+import { selectUser } from '../../../redux/users';
 
 const UNANSWERED_STYLING = 'unanswered';
 const ANSWERED_STYLING = 'answered';
@@ -44,21 +44,15 @@ const QuestionDetails = (props) => {
         return () => {};
     }, [currentUser,questionParams]);
 
-    const refreshStore = () => {
-        dispatch(fetchUsers());
-        dispatch(fetchQuestions());
-    };
-
-    const submitAnsweredQuestion = ({ authedUser, qid, answer }) => {
-        dispatch(saveAnsweredQuestion({ authedUser, qid, answer }));
-        refreshStore();
-    };
-
     return (
         <div>
-            {!errorMessage ? null : <Typography.Title type='danger'>{errorMessage}</Typography.Title>}
-            {!question ? null : <QuestionTable
-                setConfirmedAnswer={submitAnsweredQuestion}
+            {!errorMessage ? null : 
+                <section style={{ textAlign: 'center' }}>
+                    <Typography.Title type='danger'>{404}</Typography.Title>
+                    <Typography.Text type='warning' strong={true} >{errorMessage}</Typography.Text>
+                </section>}
+            {!question ? null :
+            <QuestionTable
                 question={question}
                 styling={styling}
             />}

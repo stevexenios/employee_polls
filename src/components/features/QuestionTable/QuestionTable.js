@@ -1,10 +1,13 @@
 import { Button, Table } from 'antd';
 import { useEffect, useState } from 'react';
-import { selectUser, selectTotalUsers } from '../../../redux/users';
-import { useSelector } from 'react-redux';
+import { selectUser, selectTotalUsers, fetchUsers } from '../../../redux/users';
+import { fetchQuestions, saveAnsweredQuestion } from '../../../redux/questions';
+import { useSelector, useDispatch } from 'react-redux';
 import errorHandler from '../../../utils/errorHandler';
 
-const QuestionTable = ({ setConfirmedAnswer, question, styling, disableOnModal = false }) => {
+const QuestionTable = ({ question, styling, disableOnModal = false }) => {
+  const dispatch = useDispatch();
+
   const currentUser = useSelector(selectUser);
   const totalEmployees = useSelector(selectTotalUsers);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -30,20 +33,15 @@ const QuestionTable = ({ setConfirmedAnswer, question, styling, disableOnModal =
     setIsAnswered(styling === 'answered');
   }, [styling]);
 
-  useEffect(() => {
-    let answer = '';
-    if (confirmedText === optionOne) {
-      answer = 'optionOne';
-    } else if (confirmedText === optionTwo) {
-      answer = 'optionTwo';
-    }
+  const refreshStore = () => {
+    dispatch(fetchUsers());
+    dispatch(fetchQuestions());
+  };
 
-    if (answer) {
-      const authedUser = currentUser?.id;
-      const qid = question?.id;
-      setConfirmedAnswer({ authedUser, qid, answer });
-    }
-  }, [confirmedText]);
+  const submitAnsweredQuestion = ({ authedUser, qid, answer }) => {
+      dispatch(saveAnsweredQuestion({ authedUser, qid, answer }));
+      refreshStore();
+  };
 
   const extractTableOptions = () => [
     {
@@ -75,17 +73,23 @@ const QuestionTable = ({ setConfirmedAnswer, question, styling, disableOnModal =
 
   const handleWouldYouRather = (text) => {
     setIsAnswered(true);
+    let answer = '';
     setConfirmedText(text);
     if (text && (optionOne || optionTwo)) {
       if (text === optionOne) {
         setOptionSelected('optionOne');
+        answer = 'optionOne';
       } else if (text === optionTwo) {
         setOptionSelected('optionOne');
+        answer = 'optionTwo';
       } else {
         errorHandler(
           `Text mismatch with options: text='${text}', optionOne='${optionOne}' or optionTwo='${optionTwo}'.`
         );
       }
+      const authedUser = currentUser?.id;
+      const qid = question?.id;
+      submitAnsweredQuestion({ authedUser, qid, answer });
     } else {
       errorHandler(
         `Invalid value for either: text='${text}', optionOne='${optionOne}' or optionTwo='${optionTwo}'.`
