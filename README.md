@@ -7,18 +7,21 @@
 Run `npm start` to start the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Table of Contents
-1. [Home Page](./src/components/pages/Home/Home.md)
-2. [New (add question) Page](./src/components/pages/New/New.md)
-3. [Leaderboard Page](./src/components/pages/Leaderboard/Leaderboard.md)
-4. [Login Page](./src/components/pages/Login/Login.md)
-<!-- 5. TODO [Question Details Page](src\components\pages\QuestionDetails\QuestionDetails.md) -->
-<!-- 6. TODO [Error Page](src\components\pages\Error\Error.md) -->
-<!-- 7. TODO [Unit Tests](src\tests\tests.md) -->
+- [Employee Polls](#employee-polls)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [1. Home Page](#1-home-page)
+  - [2. New Page](#2-new-page)
+  - [3. Leaderboard Page](#3-leaderboard-page)
+  - [4. Login Page](#4-login-page)
+  - [5. Question Details Page\]()](#5-question-details-page)
+  - [6. Error Page](#6-error-page)
+  - [7. Unit Tests](#7-unit-tests)
 
 ## 1. Home Page
 - The requirements for the home page and other documentation can be found [here](./src/components/pages/Home/Home.md).
 
-## 2. New (add question) Page
+## 2. New Page
 - The requirements for the new (or add) page and other documentation can be found [here](./src/components/pages/New/New.md).
 
 ## 3. Leaderboard Page
@@ -27,11 +30,11 @@ Run `npm start` to start the app in the development mode. Open [http://localhost
 ## 4. Login Page
 - The requirements for the login page and other documentation can be found [here](./src/components/pages/Login/Login.md).
 
-<!-- 5. TODO [Question Details Page](src\components\pages\QuestionDetails\QuestionDetails.md) -->
-As per requirements, it requires login if user navigates directly to the questions/questionId route..
+## 5. Question Details Page]()
+- The requirements for the question details page and other documentation can be found [here](./src/components/pages/QuestionDetails/QuestionDetails.md).
 
-<!-- 6. TODO [Error Page](src\components\pages\Error\Error.md) -->
-What error page displays...
+## 6. Error Page
+- The requirements for the error page and other documentation can be found [here](./src/components/pages/Error/Error.md).
 
-<!-- 7. TODO [Unit Tests](src\tests\tests.md) -->
-How to run tests...
+## 7. Unit Tests
+- The requirements for the unit tests and other documentation can be found [here](./src/tests/tests.md).
