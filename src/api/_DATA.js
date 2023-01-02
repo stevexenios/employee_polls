@@ -1,4 +1,14 @@
 let users = {
+  smwangi: {
+    id: 'smwangi',
+    password: '123456',
+    name: 'Steve Mwangi',
+    avatarURL: null,
+    answers: {
+      am8ehyc8byjqgar0jgpub9: 'optionTwo',
+    },
+    questions: [],
+  },
   sarahedo: {
     id: 'sarahedo',
     password: 'password123',

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import QuestionTable from '../QuestionTable/QuestionTable';
 
-const QuestionSummary = ({ restore, question, styling }) => {
+const QuestionSummary = ({ question, styling }) => {
   const navigate = useNavigate();
 
   const [displayModal, setDisplayModal] = useState(false);
