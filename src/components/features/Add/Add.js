@@ -20,13 +20,6 @@ const Add = () => {
   useEffect(() => {
     setOptionsRef.current.focus();
   }, []);
-  // useEffect(() => {
-  //   console.log('currentUser: ', currentUser);
-  // }, [currentUser]);
-
-  const onFinish = (values) => {
-    console.log('Finish:', values);
-  };
 
   const handleOptionOneChange = (e) => {
     const text = e.target.value;
