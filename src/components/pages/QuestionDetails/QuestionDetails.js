@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import QuestionTable from '../../features/QuestionTable/QuestionTable';
 import { selectQuestions } from '../../../redux/questions';
@@ -11,8 +11,6 @@ const ANSWERED_STYLING = 'answered';
 
 const QuestionDetails = (props) => {
     const questionParams = useParams();
-
-    const dispatch = useDispatch();
 
     // Selections
     const questions = useSelector(selectQuestions);

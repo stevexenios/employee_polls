@@ -67,6 +67,7 @@ const QuestionSummary = ({ restore, question, styling }) => {
         <QuestionTable
           question={question}
           styling={styling}
+          showModal={setDisplayModal}
         />
       </Modal>
     </div>

@@ -4,9 +4,12 @@ import { selectUser, selectTotalUsers, fetchUsers } from '../../../redux/users';
 import { fetchQuestions, saveAnsweredQuestion } from '../../../redux/questions';
 import { useSelector, useDispatch } from 'react-redux';
 import errorHandler from '../../../utils/errorHandler';
+import { useNavigate } from 'react-router-dom';
 
-const QuestionTable = ({ question, styling, disableOnModal = false }) => {
+const QuestionTable = ({ question, styling, showModal, disableOnModal = false }) => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const currentUser = useSelector(selectUser);
   const totalEmployees = useSelector(selectTotalUsers);
@@ -22,9 +25,13 @@ const QuestionTable = ({ question, styling, disableOnModal = false }) => {
       setOptionOne(question.optionOne.text);
       setOptionTwo(question.optionTwo.text);
     }
-    if (question.optionOne.votes.includes(currentUser.id)) {
+
+    const optionOneVoted = question.optionOne.votes.includes(currentUser.id);
+    const optionTwoVoted = question.optionTwo.votes.includes(currentUser.id);
+
+    if (optionOneVoted) {
       setOptionSelected('optionOne');
-    } else if (question.optionTwo.votes.includes(currentUser.id)) {
+    } else if (optionTwoVoted) {
       setOptionSelected('optionTwo');
     }
   }, [question]);
@@ -41,11 +48,15 @@ const QuestionTable = ({ question, styling, disableOnModal = false }) => {
   const submitAnsweredQuestion = ({ authedUser, qid, answer }) => {
       dispatch(saveAnsweredQuestion({ authedUser, qid, answer }));
       refreshStore();
+      if (showModal) {
+        showModal(false);
+      }
+      navigate("/");
   };
 
   const extractTableOptions = () => [
     {
-      key: 'optionOne',
+      key: 'optionOne_' + Date.now(),
       'selection-option': optionOne,
       'selected-count': `${question?.optionOne?.votes.length} ${
         question?.optionOne?.votes.length === 1 ? 'employee' : 'employees'
@@ -55,7 +66,7 @@ const QuestionTable = ({ question, styling, disableOnModal = false }) => {
       } %`,
     },
     {
-      key: 'optionTwo',
+      key: 'optionTwo_' + Date.now(),
       'selection-option': optionTwo,
       'selected-count': `${question?.optionTwo?.votes.length} ${
         question?.optionTwo?.votes.length === 1 ? 'employee' : 'employees'
