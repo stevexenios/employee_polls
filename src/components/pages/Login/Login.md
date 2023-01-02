@@ -53,4 +53,4 @@ end
 ![Create flow](../../../assets/diagrams/createUserFlow.png)
 
 ## References
-1. [Mermaid graph](#https://mermaid.live/)
+1. [Mermaid graph](https://mermaid.live/)
