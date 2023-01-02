@@ -9,6 +9,7 @@ Run `npm start` to start the app in the development mode. Open [http://localhost
 4. [Login Page](src\components\pages\Login\Login.md)
 <!-- 5. TODO [Question Details Page](src\components\pages\QuestionDetails\QuestionDetails.md) -->
 <!-- 6. TODO [Error Page](src\components\pages\Error\Error.md) -->
+<!-- 7. TODO [Unit Tests](src\tests\tests.md) -->
 
 ## 1. Home Page
 - The requirements for the home page and other documentation can be found [here](src\components\pages\Home\Home.md).
@@ -23,6 +24,10 @@ Run `npm start` to start the app in the development mode. Open [http://localhost
 - The requirements for the login page and other documentation can be found [here](src\components\pages\Login\Login.md).
 
 <!-- 5. TODO [Question Details Page](src\components\pages\QuestionDetails\QuestionDetails.md) -->
+As per requirements, it requires login if user navigates directly to the questions/questionId route..
 
 <!-- 6. TODO [Error Page](src\components\pages\Error\Error.md) -->
+What error page displays...
 
+<!-- 7. TODO [Unit Tests](src\tests\tests.md) -->
+How to run tests...
