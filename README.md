@@ -1,5 +1,9 @@
 # Employee Polls
 
+## Overview
+- Project developed while learning react based on the Udacity React Course.
+- I developed the basic UX and UI elements. Provided code to work with was the `./src/api/_DATA.js`. 
+
 Run `npm start` to start the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Table of Contents
