@@ -1,14 +1,4 @@
 let users = {
-  smwangi: {
-    id: 'smwangi',
-    password: '123456',
-    name: 'Steve Mwangi',
-    avatarURL: null,
-    answers: {
-      am8ehyc8byjqgar0jgpub9: 'optionTwo',
-    },
-    questions: [],
-  },
   sarahedo: {
     id: 'sarahedo',
     password: 'password123',
@@ -230,7 +220,7 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
           ...questions[qid],
           [answer]: {
             ...questions[qid][answer],
-            votes: questions[qid][answer].votes.concat([authedUser]),
+            votes: !questions[qid][answer] ? [] : questions[qid][answer].votes.concat([authedUser]),
           },
         },
       };
@@ -264,7 +254,6 @@ export function _saveNewUser({ id, password, name }) {
           avatarURL: null,
         },
       };
-      console.log('api/saveNewUser - users: ', users);
       resolve(true);
     }, 500);
   });

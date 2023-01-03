@@ -90,6 +90,6 @@ describe('QuestionSummary', () => {
         fireEvent.click(createButton);
         const errorAlert = screen.getByTestId('error-header');
         expect(errorAlert).toBeInTheDocument();
-        expect(handleSubmitCreateData).toHaveBeenCalledWith({"id": null, "name": "null null", "password": null});
+        expect(handleSubmitCreateData).toHaveBeenCalledWith({ "id": null, "name": "null null", "password": null });
     });
 });
