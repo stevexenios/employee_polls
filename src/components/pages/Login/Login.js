@@ -1,5 +1,5 @@
 import './Login.css';
-import PropTypes from 'prop-types'; // ES6
+// import PropTypes from 'prop-types'; // ES6
 import { Modal } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';

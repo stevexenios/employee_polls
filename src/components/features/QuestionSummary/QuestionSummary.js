@@ -7,6 +7,7 @@ const QuestionSummary = ({ question, styling }) => {
   const navigate = useNavigate();
 
   const [displayModal, setDisplayModal] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [confirmLoading, setConfirmLoading] = useState(false);
 
   const handleCancel = () => {

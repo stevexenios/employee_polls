@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './LeaderboardTable.css';
 import { useEffect, useState } from 'react';
 import { selectUsers, fetchUsers } from '../../../redux/users';

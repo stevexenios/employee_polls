@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { _getQuestions, _saveQuestionAnswer, _saveQuestion } from '../api/_DATA';
 
@@ -21,16 +22,13 @@ export const saveAnsweredQuestion = createAsyncThunk(
   'questions/_saveQuestionAnswer',
   async ({ authedUser, qid, answer }) => {
     const response = await _saveQuestionAnswer({ authedUser, qid, answer });
-    // console.log('On question answered, response should be true: ', response);
   }
 );
 
 export const saveNewQuestion = createAsyncThunk(
   'questions/_saveQuestion',
   async ({ optionOneText, optionTwoText, author }) => {
-    // console.log('redux/questions - saveNewQuestion: ', author);
     const response = await _saveQuestion({ optionOneText, optionTwoText, author });
-    // console.log('redux/questions - saveNewQuestion: ', response);
     return response;
   }
 );

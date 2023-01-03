@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Button, Table } from 'antd';
 import { useEffect, useState } from 'react';
 import { selectUser, selectTotalUsers, fetchUsers } from '../../../redux/users';
