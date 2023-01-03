@@ -44,6 +44,7 @@ const CreateUserForm = (props) => {
           showIcon
           closable
           banner={true}
+          data-testid="error-header"
         />
       )}
       <form className="create-user-form" onSubmit={handleSubmit}>
@@ -57,6 +58,7 @@ const CreateUserForm = (props) => {
               placeholder="Enter your first name"
               required
               onChange={(e) => setFirstName(e.target.value)}
+              data-testid="first-name-input"
             />
           </p>
           <p>
@@ -68,6 +70,7 @@ const CreateUserForm = (props) => {
               placeholder="Enter your last name"
               required
               onChange={(e) => setLastName(e.target.value)}
+              data-testid="last-name-input"
             />
           </p>
           <p>
@@ -79,6 +82,7 @@ const CreateUserForm = (props) => {
               placeholder="Enter your user Id"
               required
               onChange={(e) => setUserId(e.target.value)}
+              data-testid="user-id-input"
             />
           </p>
           <p>
@@ -89,6 +93,7 @@ const CreateUserForm = (props) => {
               placeholder="Enter your password"
               required
               onChange={(e) => setUserPassword(e.target.value)}
+              data-testid="password-input"
             />
           </p>
           <p>
@@ -97,6 +102,7 @@ const CreateUserForm = (props) => {
               id="create"
               value="Create User"
               className="submit-button"
+              data-testid="create-submit-button"
             />
           </p>
         </div>

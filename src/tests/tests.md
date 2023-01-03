@@ -14,12 +14,12 @@ You will also be expected to write at least ten unit tests for the project. The 
 ### Tests in `src/tests/QuestionSummarySnapshot.test.js` (snapshot in `src/tests/__snapshots__`)
 - [X] Write a snapshot test for at least one file.
   
-- [] Write a DOM test for at least one file which uses the fireEvent function. For example use fireEvent.click() for clicking a button and verifying that something changed in a component or fireEvent.change() to add text to an input field or select an option in a dropdown. After doing this, verify the UI changed in some way using the expect() method from jest.
+### Tests in `src/tests/CreateUserFormDom.test.js`
+- [X] Write a DOM test for at least one file which uses the fireEvent function. For example use fireEvent.click() for clicking a button and verifying that something changed in a component or fireEvent.change() to add text to an input field or select an option in a dropdown. After doing this, verify the UI changed in some way using the expect() method from jest.
+- [X]  On the login/CreateUserForm page, verify that a user name field, password field, and submit button are present on the page. (1 of 4)
+- [X]  Verify that a user gets alerted if username or password is missing, on clicking create user button. (2 of 4)
 
-The remaining four unit tests can be to verify any function or component you are writing for this project. Here are some ideas:
 
-- []  On the login page, verify that a user name field, password field, and submit button are present on the page.
-- []  Verify that a user entering an incorrect username or password and clicking submit will see an error on the page.
 - []  Verify that the leaderboard is displaying the correct user name, number of questions asked, and number of questions answered.
 - []  For answered polls, verify that the percentage of people who voted for an option is calculated and displayed correctly.
 - []  Verify the navigation bar displays all expected links.
