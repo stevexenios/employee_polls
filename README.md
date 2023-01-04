@@ -2,13 +2,20 @@
 
 ## Overview
 - Project developed while learning react based on the Udacity React Course.
-- I developed the basic UX and UI elements. Provided code to work with was the `./src/api/_DATA.js`. 
-
-Run `npm start` to start the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- I developed the basic UX and UI elements. 
+- Provided code to work with is in `./src/api/_DATA.js`.
+  
+## How to install and launch the prject locally
+1. Clone this repository from [github here](https://github.com/stevexenios/employee_polls.git).
+2. Once cloned, open terminal in the root of the project (i.e. open terminal where the `package.json` file is located).
+3. Run `npm install` to get all required dependencies. 
+4. Run `npm start` to start or launch the app in locally. 
+5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Table of Contents
 - [Employee Polls](#employee-polls)
   - [Overview](#overview)
+  - [How to install and launch the prject locally](#how-to-install-and-launch-the-prject-locally)
   - [Table of Contents](#table-of-contents)
   - [1. Home Page](#1-home-page)
   - [2. New Page](#2-new-page)
