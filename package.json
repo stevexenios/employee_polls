@@ -2,7 +2,6 @@
   "name": "employee_polls",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://stevexenios.github.io/employee_polls",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "antd": "^5.1.1",

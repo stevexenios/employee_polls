@@ -12,6 +12,8 @@
 4. Run `npm start` to start or launch the app in locally. 
 5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+![Example of launched app](https://github.com/stevexenios/employee_polls/blob/main/src/assets/gif/app.gif)
+
 ## Table of Contents
 - [Employee Polls](#employee-polls)
   - [Overview](#overview)
