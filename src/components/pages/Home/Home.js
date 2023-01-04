@@ -27,20 +27,25 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    // console.log('User: ', user);
+    console.log('User: ', user);
     if (user?.answers) {
-      const tempAnswered = Object.keys(user.answers);
-      setAnswered(tempAnswered);
-
-      const allQuestions = Object.values(questions).sort((q1, q2) => q2.timestamp - q1.timestamp);
+      let tempAnswered = new Set();
       let tempUnanswered = new Set();
+
+      const allQuestions = Object.values(questions).sort((q1, q2) => q2.timestamp - q1.timestamp);      
       allQuestions.forEach((q) => {
         if (!user.answers[q.id]) {
           tempUnanswered.add(q.id);
+        } else {
+          tempAnswered.add(q.id);
         }
       });
+
+      tempAnswered = Array.from(tempAnswered);
+      setAnswered(tempAnswered); // sorted answered question ids
+
       tempUnanswered = Array.from(tempUnanswered);
-      setUnanswered(tempUnanswered);
+      setUnanswered(tempUnanswered); // sorted unanswered question ids
     }
   }, [user, questions]);
 
