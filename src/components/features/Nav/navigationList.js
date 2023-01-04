@@ -22,7 +22,7 @@ export const navigationList = [
   },
   {
     key: 'New',
-    toPath: '/new',
+    toPath: '/add',
     disabled: false,
     icon: <PlusCircleOutlined style={customStyle} />,
     label: <h3>New</h3>,
