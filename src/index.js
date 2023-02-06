@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import './index.css';
 import store from './redux/store';
 import App from './App';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider';
 
 async function employeePollsStart() {
@@ -12,13 +12,13 @@ async function employeePollsStart() {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
           <AuthProvider>
             <Routes>
               <Route path="/*" element={<App />} />
             </Routes>
           </AuthProvider>
-        </BrowserRouter>
+        </HashRouter>
       </Provider>
     </React.StrictMode>
   );

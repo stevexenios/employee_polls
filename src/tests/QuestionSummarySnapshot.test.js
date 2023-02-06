@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { render } from "@testing-library/react";
 import QuestionSummary from '../components/features/QuestionSummary/QuestionSummary';
 
 describe('QuestionSummary', () => {
     it('will match snapshot', () => {
         const view = render(
-            <BrowserRouter>
+            <HashRouter>
                 <QuestionSummary />
-            </BrowserRouter>
+            </HashRouter>
         );
         expect(view).toMatchSnapshot();
     })
